@@ -1,0 +1,22 @@
+<Project>
+  <Import Project="Version.props" />
+  <PropertyGroup>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <!-- 默认按 x64 平台构建：命令行 dotnet build（默认 AnyCPU）与 VS(x64) 因此输出到同一目录
+         bin\x64\Release\net10.0-windows10.0.26100.0，避免生成 bin\Release 与 bin\x64\Release 双份（各含 98MB ffmpeg.exe）。 -->
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <Platform>x64</Platform>
+    <PlatformName>x64</PlatformName>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <NuGetLockFilePath Condition="'$(CompanionInputMode)' == 'Vision'">packages.vision.lock.json</NuGetLockFilePath>
+    <Deterministic>true</Deterministic>
+    <DebugType>portable</DebugType>
+    <!-- lunar 第三方库 Release 关 DebugType，与 EmbedAllSources 冲突（CS2045），跳过内嵌源码 -->
+    <EmbedAllSources Condition="'$(MSBuildProjectName)' != 'lunar'">true</EmbedAllSources>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'BigBlueFish.Control' Or '$(MSBuildProjectName)' == 'BigBlueFish.Mcp'">
+    <BaseIntermediateOutputPath>obj/$(RuntimeIdentifier)/</BaseIntermediateOutputPath>
+    <DefaultItemExcludes>$(DefaultItemExcludes);obj/**;bin/**</DefaultItemExcludes>
+    <NuGetLockFilePath>packages.$(RuntimeIdentifier).lock.json</NuGetLockFilePath>
+  </PropertyGroup>
+</Project>

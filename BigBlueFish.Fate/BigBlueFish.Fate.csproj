@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>BigBlueFish.Fate</RootNamespace>
+    <AssemblyName>BigBlueFish.Fate</AssemblyName>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <RestorePackagesWithLockFile>false</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../libs/lunar-csharp/lunar/lunar.csproj" />
+  </ItemGroup>
+</Project>

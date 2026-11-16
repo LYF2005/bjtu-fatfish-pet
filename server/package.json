@@ -1,0 +1,19 @@
+{
+  "name": "youkeding-study-server",
+  "version": "1.0.0",
+  "description": "邮课叮 · 桌宠独立后端：学业采集（作业/课件/课表/空教室）+ 桌宠大脑本地端点。数据仅存本机。",
+  "main": "studyserver.js",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node studyserver.js",
+    "check": "node --check studyserver.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "sm-crypto": "^0.3.3"
+  }
+}

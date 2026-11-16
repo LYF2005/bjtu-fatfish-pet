@@ -1,0 +1,11 @@
+{
+  "enabled": true,
+  "intervalMinutes": 15,
+  "dueSoonHours": 48,
+  "onLaunchDelaySec": 60,
+  "week1Monday": "2026-09-14",
+  "quietHours": {
+    "start": 1,
+    "end": 7
+  }
+}

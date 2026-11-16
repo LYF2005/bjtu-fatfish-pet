@@ -1,0 +1,17 @@
+{
+  "$comment": "学校服务端点配置。校方改版或适配其他学校时，只改这里，无需动采集逻辑。所有 URL 请以 / 结尾的部分按原样填写。",
+  "mis": "https://mis.bjtu.edu.cn",
+  "coursePlatform": "http://123.121.147.7:88",
+  "mail": "https://mail.bjtu.edu.cn",
+  "sso": "https://sso.bjtu.edu.cn/sso/login",
+  "aa": "https://aa.bjtu.edu.cn",
+  "classrooms": "https://aa.bjtu.edu.cn/classroom/timeholdresult/room_view/",
+  "school": {
+    "id": "bjtu",
+    "name": "北京交通大学",
+    "short": "BJTU",
+    "loginMode": "MIS 统一认证（SM2 国密加密）",
+    "accountHint": "学号（MIS 统一认证账号）",
+    "passwordHint": "MIS 统一认证密码"
+  }
+}
