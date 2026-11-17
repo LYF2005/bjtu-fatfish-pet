@@ -1,14 +1,18 @@
 # 北交大肥鱼 · youkeding-pet
 
+<div align="center">
+  <img src="docs/images/bigbluefish-portrait.png" width="200" alt="北交大肥鱼角色立绘">
+</div>
+
 > **北交大肥鱼** —— 一只住在桌面上的鲸鱼娘学习助手，专为北京交通大学同学打造。她替你盯紧作业 DDL，逐条对账藏在「实验栏」里的隐藏作业，把课表做成一屏可读的表格、点课程直达课件，还能查空教室、提醒未读邮件。
 >
 > **隐私优先**：学号与密码只存本机，数据不上传、课件不入库，可完全离线使用。
 >
 > **开箱即用**：提供 Windows、Linux、macOS（Intel 与 Apple Silicon）三端免安装绿色包，内置 Node 运行时与 .NET 自包含程序，解压双击即跑——无需安装环境、无需管理员权限、不写注册表。
 >
-> 本项目与桌面壁纸项目 `fatty-fish-wallpaper` 完全独立，可分别克隆、分别运行、互不依赖。美术素材来自开源项目 `dsh-pet`（MIT），详见 [THIRD-PARTY.md](THIRD-PARTY.md)。
-
-> 美术素材来源于开源项目 `dsh-pet`（PC2005-cloud，MIT）等，详见 [THIRD-PARTY.md](THIRD-PARTY.md) 与素材目录声明。
+> 本项目与桌面壁纸项目 `fatty-fish-wallpaper` 完全独立，可分别克隆、分别运行、互不依赖。
+>
+> 美术素材来自开源项目 `dsh-pet`（PC2005-cloud，MIT）等，详见 [THIRD-PARTY.md](THIRD-PARTY.md) 与素材目录声明。
 
 ---
 
@@ -20,6 +24,19 @@
 - **课件资料**：按学期 / 课程 / 目录浏览并下载本人有权限访问的资料，本地缓存。
 - **空教室**：按教学周查询空闲教室网格。
 - **提醒**：作业临近截止、未读邮件通过桌宠气泡提醒。
+
+### 桌宠日常
+
+<p align="center">
+  <img src="docs/images/bigbluefish-idle-breath.gif" width="30%" alt="待机呼吸">
+  <img src="docs/images/bigbluefish-click-wave.gif" width="30%" alt="点击互动">
+  <img src="docs/images/bigbluefish-meal.gif" width="30%" alt="投喂">
+</p>
+<p align="center">
+  <img src="docs/images/bigbluefish-maid-bow.gif" width="30%" alt="女仆礼">
+  <img src="docs/images/bigbluefish-sleep.gif" width="30%" alt="睡觉">
+  <img src="docs/images/bigbluefish-fireworks.gif" width="30%" alt="烟花">
+</p>
 
 ## 隐私与安全
 
