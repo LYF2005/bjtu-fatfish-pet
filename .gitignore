@@ -49,3 +49,8 @@ server/notify/downloads/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# ===== 绿色包构建产物（体积大、可再生成，绝不入库）=====
+packaging/.cache/
+packaging/.build/
+packaging/dist/
