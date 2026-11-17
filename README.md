@@ -11,6 +11,7 @@ _基于开源桌宠「蓝色大肥鱼（Big Blue Fish Desktop Pet）」的深度
 [![框架](https://img.shields.io/badge/.NET-10-512BD4)](#技术架构)
 [![本地模型](https://img.shields.io/badge/model-Qwen3.5--4B%20Q4_K_M-orange)](#2-读屏理解与本地对话)
 [![许可](https://img.shields.io/badge/license-Apache--2.0-green)](LICENSE)
+[![Gitee 镜像](https://img.shields.io/badge/Gitee-镜像仓库-red?logo=gitee)](https://gitee.com/xiahou_Li/bjtu-fatfish-pet)
 
 <img src="docs/images/bigbluefish-portrait.png" width="200" alt="北交大肥鱼角色立绘">
 
@@ -21,6 +22,8 @@ _基于开源桌宠「蓝色大肥鱼（Big Blue Fish Desktop Pet）」的深度
 > **开箱即用**：提供 Windows、Linux（x64 / arm64）、macOS（Intel / Apple Silicon）免安装绿色包，内置 Node 运行时与 .NET 自包含程序，解压即用——无需安装环境、无需管理员权限、不写注册表。
 >
 > 本项目与桌面壁纸项目 `fatty-fish-wallpaper` 完全独立，可分别克隆、分别运行、互不依赖。美术素材来自开源项目 `dsh-pet`（PC2005-cloud，MIT）等，详见 [THIRD-PARTY.md](THIRD-PARTY.md)。
+>
+> **国内加速**：Gitee 镜像见 https://gitee.com/xiahou_Li/bjtu-fatfish-pet （代码与文档同步自 GitHub）。绿色包请仍从下方 GitHub Releases 下载。
 
 ---
 
