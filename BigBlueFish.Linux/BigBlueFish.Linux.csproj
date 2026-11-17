@@ -9,12 +9,15 @@
     <Compile Include="../BigBlueFish.Windows/Companion/CompanionAnimationPolicy.cs" Link="Shared/CompanionAnimationPolicy.cs" />
     <Compile Include="../BigBlueFish.Windows/Companion/CompanionDialogue.cs" Link="Shared/CompanionDialogue.cs" />
     <Compile Include="../BigBlueFish.Windows/Companion/CompanionBrain.cs" Link="Shared/CompanionBrain.cs" />
+    <Compile Include="../BigBlueFish.Windows/Companion/CompanionHotTrend.cs" Link="Shared/CompanionHotTrend.cs" />
+    <Compile Include="../BigBlueFish.Windows/Companion/CompanionBridgeConfig.cs" Link="Shared/CompanionBridgeConfig.cs" />
+    <Compile Include="../BigBlueFish.Windows/Companion/CompanionWizardData.cs" Link="Shared/CompanionWizardData.cs" />
     <Compile Include="../BigBlueFish.Windows/Companion/CompanionWeather.cs" Link="Shared/CompanionWeather.cs" />
     <Compile Include="../BigBlueFish.Windows/Companion/CompanionNews.cs" Link="Shared/CompanionNews.cs" />
     <Compile Include="../BigBlueFish.Windows/Companion/CompanionRegions.cs" Link="Shared/CompanionRegions.cs" />
     <Compile Include="../BigBlueFish.Windows/Companion/CompanionOcrLayout.cs" Link="Shared/CompanionOcrLayout.cs" />
-    <Compile Include="../../deployment/ModelStore.cs" Link="Shared/ModelStore.cs" />
-    <Compile Include="../../deployment/ArtifactDownload.cs" Link="Shared/ArtifactDownload.cs" />
+    <Compile Include="../deployment/ModelStore.cs" Link="Shared/ModelStore.cs" />
+    <Compile Include="../deployment/ArtifactDownload.cs" Link="Shared/ArtifactDownload.cs" />
     <EmbeddedResource Include="../BigBlueFish.Windows/assets/regions/china-regions.json" LogicalName="BigBlueFish.Windows.assets.regions.china-regions.json" />
     <AvaloniaResource Include="../BigBlueFish.Windows/Res/Font/LemiXiaoNaiPaoTi.ttf" Link="Assets/LemiXiaoNaiPaoTi.ttf" />
     <Content Include="../BigBlueFish.Windows/assets/fish/**/*" Link="assets/fish/%(RecursiveDir)%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
