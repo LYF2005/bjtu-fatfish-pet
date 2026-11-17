@@ -6,8 +6,9 @@
   - 使用相对本脚本的目录解析路径，不硬编码任何用户目录。
   - 优先使用 PATH 中的 node.exe，找不到时探测常见安装位置。
   - 任务名与壁纸项目不同（Youkeding-StudyServer），两者互不干扰。
-  - 说明：node.exe 是控制台程序，登录瞬间可能短暂闪一下窗口；如要完全无窗口，
-    可把动作改为经 wscript 启动一个放在纯英文路径下的包装 VBS。
+  - 说明：node.exe 是控制台程序，登录瞬间可能短暂闪一下窗口。若需完全无窗口，
+    不要使用 VBS + wscript（中文路径易出错、文件缺失会导致自启失败）；改用编译为
+    WinExe（GUI 子系统、不分配控制台）的启动器，原理见壁纸项目 launcher/README.md。
 .PARAMETER TaskName
   计划任务名称，默认 Youkeding-StudyServer。
 .PARAMETER Uninstall
