@@ -13,7 +13,7 @@ class Program
         protected override bool ShowWithoutActivation => true;
         internal Fixture()
         {
-            Text = "蓝色大肥鱼 · 前台窗口回归样例";
+            Text = "北交大肥鱼 · 前台窗口回归样例";
             Width = 420; Height = 180; ShowInTaskbar = false;
             Controls.Add(new Label { Dock = DockStyle.Fill, Text = "仅用于验证可见、最小化、隐藏窗口的截图行为" });
         }

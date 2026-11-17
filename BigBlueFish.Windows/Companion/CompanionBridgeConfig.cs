@@ -5,7 +5,7 @@ using System.Text.Json;
 namespace BigBlueFish.Windows;
 
 /// <summary>
-/// 桌宠后端（邮课叮 studyserver.js）的桥接地址配置。
+/// 桌宠后端（北交大肥鱼 studyserver.js）的桥接地址配置。
 ///
 /// 解析优先级（高 → 低）：
 ///   1. 环境变量 YOUKEDING_BRIDGE_PORT / YOUKEDING_BRIDGE_BASE

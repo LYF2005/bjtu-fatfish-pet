@@ -9,8 +9,8 @@ $tfm=if($InputMode -eq 'Ocr'){'net10.0-windows10.0.26100.0'}else{'net10.0-window
 $directory=Join-Path $PSScriptRoot "BigBlueFish.Windows/bin/x64/Release/$tfm"
 if(!$RuntimeDirectory){$RuntimeDirectory=$env:BLUE_WHALE_RUNTIME}
 if(!$ModelsDirectory){$ModelsDirectory=$env:BLUE_WHALE_MODELS}
-if(!$RuntimeDirectory){$RuntimeDirectory='C:\Program Files\蓝色大肥鱼\runtime'}
-if(!$ModelsDirectory){$ModelsDirectory='C:\Program Files\蓝色大肥鱼\models'}
+if(!$RuntimeDirectory){$RuntimeDirectory='C:\Program Files\北交大肥鱼\runtime'}
+if(!$ModelsDirectory){$ModelsDirectory='C:\Program Files\北交大肥鱼\models'}
 $ModelsDirectory=$ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($ModelsDirectory)
 $selection=Resolve-DevelopmentModel -ModelsDirectory $ModelsDirectory -NoModel:$NoModel
 if($selection.Source -ne 'none'){

@@ -46,7 +46,7 @@ internal static class Program
         foreach(var scale in new[]{1.0,.5,2.0,1.35})
         {
             slider.Value=scale;Invoke(w,"ShowCompanionNotice","主人，鱼鱼陪你呀~",false);Pump(120);
-            var popup=w.OwnedWindows.Cast<Window>().Single(p=>p.Title=="蓝色大肥鱼 · 对话");
+            var popup=w.OwnedWindows.Cast<Window>().Single(p=>p.Title=="北交大肥鱼 · 对话");
             if(scale==1){baseWidth=popup.Width;baseHeight=popup.Height;}
             Check(Math.Abs(popup.Width-baseWidth*scale)<1&&Math.Abs(popup.Height-baseHeight*scale)<1,"complete bubble scales proportionally "+scale);
             Check(sprite.Width==petWidth&&Property<double>(prefs,"Scale")==1,"bubble scaling leaves pet unchanged "+scale);
@@ -61,14 +61,14 @@ internal static class Program
             Set(prefs,"Scale",petScale);Invoke(w,"ApplyCompanionScale",false);slider.Value=bubbleScale;
             w.Left=corner.X;w.Top=corner.Y;Invoke(w,"ClampCompanion");
             Invoke(w,"ShowCompanionNotice","主人，鱼鱼看到你在认真研究新的功能啦，先伸个懒腰再慢慢来好不好呀？小尾巴也跟着主人一起加油哦~",false);Pump(80);
-            var popup=w.OwnedWindows.Cast<Window>().Single(p=>p.Title=="蓝色大肥鱼 · 对话");var area=CompanionEdgeLayout.WorkArea(w);
+            var popup=w.OwnedWindows.Cast<Window>().Single(p=>p.Title=="北交大肥鱼 · 对话");var area=CompanionEdgeLayout.WorkArea(w);
             Check(popup.IsVisible&&popup.Left>=area.Left-1&&popup.Top>=area.Top-1&&popup.Left+popup.Width<=area.Right+1&&popup.Top+popup.Height<=area.Bottom+1,"scaled bubble stays inside work area");
             Check(Math.Abs(Property<double>(prefs,"BubbleScale")-bubbleScale)<.001,"pet resize preserves bubble setting");
             var bounds=text.TransformToAncestor(popup).TransformBounds(new Rect(0,0,text.ActualWidth,text.ActualHeight));
             Check(bounds.Right<=popup.Width+1&&bounds.Bottom<=popup.Height+1,$"full text fits scaled popup pet={petScale} bubble={bubbleScale} corner={corner} bounds={bounds} popup={popup.Width}x{popup.Height}");
         }
         Children<Button>(bubble).Single().RaiseEvent(new RoutedEventArgs(Button.ClickEvent));Pump();
-        Check(!w.OwnedWindows.Cast<Window>().Single(p=>p.Title=="蓝色大肥鱼 · 对话").IsVisible,"scaled close button dismisses bubble");
+        Check(!w.OwnedWindows.Cast<Window>().Single(p=>p.Title=="北交大肥鱼 · 对话").IsVisible,"scaled close button dismisses bubble");
         settings.Close();
         foreach(var sample in new[]{(Value:.1,Expected:.5),(Value:9.0,Expected:2.0)})
         {
@@ -111,7 +111,7 @@ internal static class Program
         var petStyle=GetWindowStyle(Handle(w),-20).ToInt64();
         Check(w.Topmost&&!w.ShowActivated&&!w.ShowInTaskbar&&(petStyle&0x08000080)==0x08000080,"pet remains topmost non-activating tool window");
         Invoke(w,"ShowCompanionNotice","主人，鱼鱼在这里呀~",false);Pump();
-        var bubble=w.OwnedWindows.Cast<Window>().Single(p=>p.Title=="蓝色大肥鱼 · 对话");
+        var bubble=w.OwnedWindows.Cast<Window>().Single(p=>p.Title=="北交大肥鱼 · 对话");
         Check(bubble.IsVisible&&bubble.Topmost&&!bubble.ShowActivated&&!bubble.ShowInTaskbar,"bubble retains topmost no-activate behavior");
         Check(GetForegroundWindow()==Handle(other),"showing pet bubble does not take foreground from ordinary window");
         Invoke(w,"OpenCompanionSettings");((Window)Read(w,"companionSettings")).Close();other.Activate();Pump();
@@ -295,7 +295,7 @@ internal static class Program
                 var body=CompanionEdgeLayout.PetBounds(w);var work=CompanionEdgeLayout.WorkArea(w);
                 Check(w.Left+body.Left>=work.Left-1&&w.Top+body.Top>=work.Top-1,"visible body clamps at scale "+scale);
                 Invoke(w,"ShowCompanionBubble","主人，大肥鱼的小尾巴也陪着你认真工作呀～");Pump(100);
-                Check(w.OwnedWindows.Cast<Window>().Any(p=>p.Title=="蓝色大肥鱼 · 对话"&&p.IsVisible),"separate bubble visible "+scale);
+                Check(w.OwnedWindows.Cast<Window>().Any(p=>p.Title=="北交大肥鱼 · 对话"&&p.IsVisible),"separate bubble visible "+scale);
             }
             settings.Width=680;settings.Height=450;Pump(100);
             Render((Visual)settings.Content,"settings-small.png",(int)settings.ActualWidth,(int)settings.ActualHeight);

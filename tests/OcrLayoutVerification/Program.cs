@@ -31,9 +31,9 @@ class Program
         Check(!noise.Contains("\n，") && noise.Contains("明天吃饭？"), "Standalone punctuation removed without stripping sentence punctuation");
         Check(CompanionOcrLayout.Format(Array.Empty<CompanionOcrWord>(), 1000, 700).Contains("没有识别到文字"), "Empty screen invented content");
         var longWords = new List<CompanionOcrWord>();
-        for (int i = 0; i < 250; i++) longWords.Add(new(i == 0 ? "蓝色大肥鱼项目" : i == 249 ? "正在修复OCR文字拼接" : new string('测', 40), 400, 100 + i * 20, 400, 18));
+        for (int i = 0; i < 250; i++) longWords.Add(new(i == 0 ? "北交大肥鱼项目" : i == 249 ? "正在修复OCR文字拼接" : new string('测', 40), 400, 100 + i * 20, 400, 18));
         var longText = CompanionOcrLayout.Format(longWords, 1200, 6000);
-        Check(longText.Length < 5800 && longText.Contains("蓝色大肥鱼项目") && longText.Contains("正在修复OCR文字拼接"), "Long input identity or recent content lost");
+        Check(longText.Length < 5800 && longText.Contains("北交大肥鱼项目") && longText.Contains("正在修复OCR文字拼接"), "Long input identity or recent content lost");
         Console.WriteLine($"PASS: {checks} OCR layout checks");
     }
 }

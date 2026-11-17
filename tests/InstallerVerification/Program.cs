@@ -53,7 +53,7 @@ internal static class Checks
             var limit = DateTime.UtcNow.AddSeconds(20);
             do { Thread.Sleep(100); process.Refresh(); }
             while (!process.HasExited && process.MainWindowHandle == IntPtr.Zero && DateTime.UtcNow < limit);
-            Check(!process.HasExited && process.MainWindowTitle == "卸载蓝色大肥鱼",
+            Check(!process.HasExited && process.MainWindowTitle == "卸载北交大肥鱼",
                 explicitArguments ? "registered command opens actual uninstall window" : "zero-argument Uninstall.exe opens actual uninstall window from unrelated working directory");
             var window = AutomationElement.FromHandle(process.MainWindowHandle);
             var box = window.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.ControlTypeProperty, ControlType.CheckBox));
@@ -84,7 +84,7 @@ internal static class Checks
             while (!process.HasExited && process.MainWindowHandle == IntPtr.Zero && DateTime.UtcNow < limit);
             Check(!process.HasExited && process.MainWindowHandle != IntPtr.Zero, "actual uninstall worker reaches completion dialog");
             var dialog = AutomationElement.FromHandle(process.MainWindowHandle);
-            Check(dialog.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.NameProperty, "蓝色大肥鱼已卸载。")) != null,
+            Check(dialog.FindFirst(TreeScope.Descendants, new PropertyCondition(AutomationElement.NameProperty, "北交大肥鱼已卸载。")) != null,
                 "actual standalone worker reports successful removal");
             var ok = dialog.FindFirst(TreeScope.Descendants, new AndCondition(
                 new PropertyCondition(AutomationElement.ControlTypeProperty, ControlType.Button),

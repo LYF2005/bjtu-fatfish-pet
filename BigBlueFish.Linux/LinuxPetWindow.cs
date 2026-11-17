@@ -51,7 +51,7 @@ internal sealed partial class LinuxPetWindow : Window
         mutex = new Mutex(true, "BigBlueFish.Linux." + Environment.UserName, out var first);
         if (!first) Environment.Exit(0);
         brain = new() { UseGpu = Preferences.GpuEnabled, StopOnBattery = Preferences.StopModelOnBattery, WeatherRegionCode = Preferences.WeatherRegionCode };
-        Title = "蓝色大肥鱼"; WindowDecorations = WindowDecorations.None; ShowInTaskbar = false; ShowActivated = false;
+        Title = "北交大肥鱼"; WindowDecorations = WindowDecorations.None; ShowInTaskbar = false; ShowActivated = false;
         Topmost = true; CanResize = false; Background = Brushes.Transparent; TransparencyLevelHint = [WindowTransparencyLevel.Transparent];
         var canvas = new Grid(); canvas.Children.Add(sprite); canvas.Children.Add(loading); Content = canvas;
         loading.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left; loading.VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top;
@@ -65,7 +65,7 @@ internal sealed partial class LinuxPetWindow : Window
         close.Click += (_, _) => { typing = false; bubbleWindow!.Hide(); };
         var bubbleGrid = new Grid(); bubbleGrid.Children.Add(bubbleText); bubbleGrid.Children.Add(close); bubbleText.Margin = new Thickness(0, 0, 24, 0);
         bubbleFrame = new LinuxBubble { Child = bubbleGrid, Padding = new Thickness(16,16,16,30) };
-        bubbleWindow = new Window { Title = "蓝色大肥鱼 · 对话", WindowDecorations = WindowDecorations.None, ShowInTaskbar = false, ShowActivated = false,
+        bubbleWindow = new Window { Title = "北交大肥鱼 · 对话", WindowDecorations = WindowDecorations.None, ShowInTaskbar = false, ShowActivated = false,
             Topmost = true, CanResize = false, Background = Brushes.Transparent, TransparencyLevelHint = [WindowTransparencyLevel.Transparent], Content = bubbleFrame };
         Rescale();
         var screen = Screens.Primary?.WorkingArea ?? new PixelRect(0, 0, 1280, 720);

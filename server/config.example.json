@@ -1,5 +1,5 @@
 {
-  "$comment": "邮课叮桌宠后端配置模板。复制为 config.json 后按需修改（config.json 已被 git 忽略）。端口默认 23336，与壁纸桥接的 23334 互不冲突。",
+  "$comment": "北交大肥鱼桌宠后端配置模板。复制为 config.json 后按需修改（config.json 已被 git 忽略）。端口默认 23336，与壁纸桥接的 23334 互不冲突。",
   "server": {
     "httpPort": 23336,
     "dbPath": "study-data.db"

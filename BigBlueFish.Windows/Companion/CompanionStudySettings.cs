@@ -9,7 +9,7 @@ using System.Windows.Media;
 namespace BigBlueFish.Windows;
 
 /// <summary>
-/// 邮课叮 · 学业账号设置页。
+/// 北交大肥鱼 · 学业账号设置页。
 /// 这一页让任何同学都能把自己的学号/密码填进来，而不是写死在采集器的配置里。
 /// 账号保存在本机桥接服务的加密凭证文件中（AES-256-GCM），桌宠自己不落盘密码。
 /// </summary>
@@ -112,7 +112,7 @@ public partial class MainWindow
         });
         var auto = new CheckBox
         {
-            Content = "开启邮课叮自动提醒",
+            Content = "开启北交大肥鱼自动提醒",
             IsChecked = preferences.StudyNotifyEnabled,
             Margin = new Thickness(0, 0, 0, 2)
         };
@@ -314,7 +314,7 @@ public partial class MainWindow
         {
             if (busy) return;
             var ok = MessageBox.Show(owner,
-                "清除后这台电脑就不再记得你的学号密码，邮课叮会停止工作，直到重新填写。\n\n确定要清除吗？",
+                "清除后这台电脑就不再记得你的学号密码，北交大肥鱼会停止工作，直到重新填写。\n\n确定要清除吗？",
                 "清除学业账号", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             if (ok != MessageBoxResult.OK) return;
             SetBusy(true, "正在清除…");

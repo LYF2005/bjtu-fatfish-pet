@@ -53,12 +53,12 @@ class Program
         }
         var fixtures = new[]
         {
-            ("development", "Visual Studio Code", new[] { "蓝色大肥鱼项目", "CompanionOcr.cs", "正在开发前台截图的文字识别功能", "编译成功" }, "蓝色大肥鱼"),
+            ("development", "Visual Studio Code", new[] { "北交大肥鱼项目", "CompanionOcr.cs", "正在开发前台截图的文字识别功能", "编译成功" }, "北交大肥鱼"),
             ("chat", "微信", new[] { "小白", "我：明天一起去吃饭吗？", "小白：好呀，明天中午去吃火锅吧。", "我：那就十二点见。" }, "明天"),
             ("office", "Microsoft Word", new[] { "课程报告.docx", "教育实践课程报告", "正在撰写本学期课程总结", "一、教学实践的收获" }, "课程"),
             ("browser", "科技新闻 - 浏览器", new[] { "科技新闻", "新一代笔记本电脑发布", "阅读最新科技新闻与电脑评测" }, "科技"),
             ("video", "哔哩哔哩", new[] { "视频教程", "Photoshop 绘画入门", "第十课：颜色与光影", "播放 03:21 / 20:00" }, "绘画"),
-            ("desktop", "Windows 桌面", new[] { "快捷方式和文件图标", "Visual Studio Code    微信    回收站", "课程报告.docx    蓝色大肥鱼", "开始    搜索    18:30" }, "桌面"),
+            ("desktop", "Windows 桌面", new[] { "快捷方式和文件图标", "Visual Studio Code    微信    回收站", "课程报告.docx    北交大肥鱼", "开始    搜索    18:30" }, "桌面"),
             ("newtab", "Microsoft Edge - 新建标签页", new[] { "搜索或输入网址", "常用网站：GitHub  知乎  ChatGPT", "推荐卡片：新一代笔记本电脑发布", "新建标签页" }, "标签"),
             ("homepage", "浏览器主页", new[] { "搜索网页", "常用网站：GitHub  微信", "推荐：科技新闻  今日天气", "主页" }, "主页")
         };
@@ -169,7 +169,7 @@ class Program
             Console.WriteLine($"MODEL {fixture.Item1}: first={first:F2}s, total={watch.Elapsed.TotalSeconds:F2}s, text={text}, timings={timings}");
             bool lowInfo = fixture.Item1 is "desktop" or "newtab" or "homepage";
             bool inventedTask = lowInfo && System.Text.RegularExpressions.Regex.IsMatch(text,
-                "写.{0,8}代码|开发|编程|正在.{0,8}(阅读|看|研究).{0,10}(新闻|论文)|整理|处理.{0,8}文档|撰写|写.{0,8}报告|聊天|火锅|绘画|画画|查资料|找资料|正在.{0,12}(搜索(?!框)|找个|找新|输入)|是不是.{0,15}(新电脑|蓝色大肥鱼|新游戏)|藏.{0,12}回收站");
+                "写.{0,8}代码|开发|编程|正在.{0,8}(阅读|看|研究).{0,10}(新闻|论文)|整理|处理.{0,8}文档|撰写|写.{0,8}报告|聊天|火锅|绘画|画画|查资料|找资料|正在.{0,12}(搜索(?!框)|找个|找新|输入)|是不是.{0,15}(新电脑|北交大肥鱼|新游戏)|藏.{0,12}回收站");
             if (text.Length < 15 || !text.Contains("主人") || (!lowInfo && !topics.Any(text.Contains)) || inventedTask)
             { failures++; Console.WriteLine("FAIL screen-topic/observer check " + fixture.Item1); }
         }

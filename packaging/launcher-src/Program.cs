@@ -6,7 +6,7 @@ using System.Net.Sockets;
 namespace YoukedingLauncher
 {
     /// <summary>
-    /// 邮课叮桌宠 · Windows 免安装绿色包启动器。
+    /// 北交大肥鱼桌宠 · Windows 免安装绿色包启动器。
     ///
     /// 设计目标（"傻瓜包"核心）：
     ///   1. 编译为 WinExe（GUI 子系统）→ 双击不弹黑色控制台窗口；

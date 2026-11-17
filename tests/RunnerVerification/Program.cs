@@ -176,7 +176,7 @@ internal static class Program
             Check(CompanionBrain.GpuMicroBatch("Vulkan0: AMD (8886 MiB, 8441 MiB free)\nVulkan1: RTX3050 (3979 MiB, 3382 MiB free)") == 128, "smallest reported device budget protects mixed laptop GPUs");
             Check(CompanionBrain.GpuMicroBatch("Vulkan0: GPU (8192 MiB, 6000 MiB free)") == 512, "medium free-memory budget uses intermediate compute buffer");
 
-            var content = "前台应用：Code\n窗口正文：蓝色大肥鱼项目，正在修改 CompanionBrain.cs";
+            var content = "前台应用：Code\n窗口正文：北交大肥鱼项目，正在修改 CompanionBrain.cs";
             var request = CompanionBrain.SpeechRequest(content);
             Check(request.Contains(content) && request.Contains("屏幕资料结束"), "SpeechRequest preserves current screen content as delimited data");
             var ocr = CompanionBrain.OcrSpeechRequest("我：明天中午一起吃火锅，十二点见。");

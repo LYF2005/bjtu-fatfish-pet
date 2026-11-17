@@ -76,7 +76,7 @@ internal sealed class CompanionPreferences
     public double? Left { get; set; }
     public double? Top { get; set; }
 
-    // 邮课叮：学业提醒。LastStudyAlertId 记录已消费到的提醒 id，StudyNotifyEnabled 控制自动提醒开关。
+    // 北交大肥鱼：学业提醒。LastStudyAlertId 记录已消费到的提醒 id，StudyNotifyEnabled 控制自动提醒开关。
     public long LastStudyAlertId { get; set; }
     public bool StudyNotifyEnabled { get; set; } = true;
 

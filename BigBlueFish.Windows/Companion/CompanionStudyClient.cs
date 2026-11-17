@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace BigBlueFish.Windows;
 
 /// <summary>
-/// 邮课叮 · 学业数据客户端。
+/// 北交大肥鱼 · 学业数据客户端。
 /// 所有数据来自桌宠自带的本机后端（youkeding-pet/server/studyserver.js，默认 http://127.0.0.1:23336），
 /// 由独立 Node 采集器负责登录北交大 MIS / 课程平台 / 邮箱 / 教务系统。
 /// 桌宠只做只读展示，不保存账号密码；与壁纸项目完全解耦。

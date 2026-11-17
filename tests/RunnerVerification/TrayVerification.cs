@@ -48,7 +48,7 @@ internal static class TrayVerification
                 fail = false; tray.EnsureRegistered();
                 if (!tray.Registered || !File.ReadAllText("companion-errors.log").Contains("已恢复")) throw new Exception("Registration retry did not recover");
                 tray.Dispose();
-                tray = new CompanionTrayIcon { Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "BigBlueFish.ico"), 32, 32), Text = "蓝色大肥鱼普通权限托盘验证" };
+                tray = new CompanionTrayIcon { Icon = new Icon(Path.Combine(AppContext.BaseDirectory, "BigBlueFish.ico"), 32, 32), Text = "北交大肥鱼普通权限托盘验证" };
                 tray.Visible = true;
                 var clock = Stopwatch.StartNew();
                 while (!tray.IsPresent() && clock.Elapsed.TotalSeconds < 8)

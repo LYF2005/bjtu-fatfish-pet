@@ -1,4 +1,4 @@
-﻿# 邮课叮桌宠 · 免安装绿色包
+﻿# 北交大肥鱼桌宠 · 免安装绿色包
 
 一键打包，解压即用。不写注册表、不装系统服务、不需要用户预装 .NET 或 Node.js。
 
@@ -6,16 +6,16 @@
 
 | 平台 | 产物 | 入口 |
 | --- | --- | --- |
-| Windows x64 | `邮课叮桌宠-Windows-x64.zip` | `启动邮课叮.exe`（无黑窗） |
-| Linux x64 | `邮课叮桌宠-Linux-x64.tar.gz` | `启动邮课叮.sh` |
-| macOS Apple Silicon | `邮课叮桌宠-macOS-arm64.tar.gz` | `启动邮课叮.command` |
-| macOS Intel | `邮课叮桌宠-macOS-x64.tar.gz` | `启动邮课叮.command` |
+| Windows x64 | `北交大肥鱼桌宠-Windows-x64.zip` | `启动北交大肥鱼.exe`（无黑窗） |
+| Linux x64 | `北交大肥鱼桌宠-Linux-x64.tar.gz` | `启动北交大肥鱼.sh` |
+| macOS Apple Silicon | `北交大肥鱼桌宠-macOS-arm64.tar.gz` | `启动北交大肥鱼.command` |
+| macOS Intel | `北交大肥鱼桌宠-macOS-x64.tar.gz` | `启动北交大肥鱼.command` |
 
 ## 包内目录结构
 
 ```
-邮课叮桌宠/
-├── 启动邮课叮.exe / .sh / .command   # 一键启动器：拉起后端→等端口→拉起桌宠
+北交大肥鱼桌宠/
+├── 启动北交大肥鱼.exe / .sh / .command   # 一键启动器：拉起后端→等端口→拉起桌宠
 ├── app/                              # 桌宠本体（.NET 自包含发布，含运行时）
 ├── server/                           # Node 后端（纯 JS 依赖，零原生模块）
 │   ├── studyserver.js
@@ -57,10 +57,10 @@ powershell -ExecutionPolicy Bypass -File .\build-portable.ps1 -NodeVersion v22.2
 
 | 包 | 大小 | 架构校验 | 状态 |
 | --- | --- | --- | --- |
-| `邮课叮桌宠-Windows-x64.zip` | 235 MB | exe = x64 | 通过 |
-| `邮课叮桌宠-Linux-x64.tar.gz` | 152 MB | PE = x64 | 通过 |
-| `邮课叮桌宠-macOS-arm64.tar.gz` | 145 MB | DLL/CoreCLR/Host = ARM64 | 通过 |
-| `邮课叮桌宠-macOS-x64.tar.gz` | 149 MB | DLL/CoreCLR = x86_64 | 通过 |
+| `北交大肥鱼桌宠-Windows-x64.zip` | 235 MB | exe = x64 | 通过 |
+| `北交大肥鱼桌宠-Linux-x64.tar.gz` | 152 MB | PE = x64 | 通过 |
+| `北交大肥鱼桌宠-macOS-arm64.tar.gz` | 145 MB | DLL/CoreCLR/Host = ARM64 | 通过 |
+| `北交大肥鱼桌宠-macOS-x64.tar.gz` | 149 MB | DLL/CoreCLR = x86_64 | 通过 |
 
 功能验证：从 Windows 包提取后端，用其内嵌 `node.exe` 实际启动，
 `better-sqlite3` 缺失时正确打印降级日志并完成内存初始化，HTTP `/health` 返回 `ok:true`。

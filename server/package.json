@@ -1,7 +1,7 @@
 {
   "name": "youkeding-study-server",
   "version": "1.0.0",
-  "description": "邮课叮 · 桌宠独立后端：学业采集（作业/课件/课表/空教室）+ 桌宠大脑本地端点。数据仅存本机。",
+  "description": "北交大肥鱼 · 桌宠独立后端：学业采集（作业/课件/课表/空教室）+ 桌宠大脑本地端点。数据仅存本机。",
   "main": "studyserver.js",
   "license": "MIT",
   "type": "module",

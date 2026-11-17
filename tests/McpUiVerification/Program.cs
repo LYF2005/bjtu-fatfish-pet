@@ -358,7 +358,7 @@ internal static class Program
     }
     private sealed class Fixture : IDisposable
     {
-        internal readonly Window Window = new() { Title = "MCP前台截图验证 · 1001", Width = 640, Height = 420, Background = Brushes.LimeGreen, Content = new TextBlock { Text = "蓝色大肥鱼 MCP 截图验证\n前台内容编号：1001", FontSize = 30, Margin = new Thickness(30) } };
+        internal readonly Window Window = new() { Title = "MCP前台截图验证 · 1001", Width = 640, Height = 420, Background = Brushes.LimeGreen, Content = new TextBlock { Text = "北交大肥鱼 MCP 截图验证\n前台内容编号：1001", FontSize = 30, Margin = new Thickness(30) } };
         public void Dispose() => Window.Close();
     }
 }

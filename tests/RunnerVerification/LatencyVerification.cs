@@ -43,7 +43,7 @@ internal static class LatencyVerification
         var app = new Application();
         var text = new TextBlock { FontSize = 18, Foreground = Brushes.Black, Background = Brushes.White,
             TextWrapping = TextWrapping.Wrap, Margin = new Thickness(25) };
-        var window = new Window { Title = "蓝色大肥鱼代码开发 · 首字时间验收", Width = 1120, Height = 840,
+        var window = new Window { Title = "北交大肥鱼代码开发 · 首字时间验收", Width = 1120, Height = 840,
             Left = 20, Top = 20, Content = new ScrollViewer { Content = text }, Background = Brushes.White };
         string previous = "";
         var timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(80) };
@@ -101,7 +101,7 @@ internal static class LatencyVerification
             fixture = Process.Start(start)!;
             Wait(() => File.Exists("fixture-hwnd"), 15, "Screen fixture did not start");
             var handle = new IntPtr(long.Parse(File.ReadAllText("fixture-hwnd")));
-            string summary = "蓝色大肥鱼项目开发\n\n主人正在排查本地模型加载和首字等待时间，验证不同电脑上的运行表现。\n当前任务：修复显存分配，检查读屏、文字识别、流式气泡显示。\n";
+            string summary = "北交大肥鱼项目开发\n\n主人正在排查本地模型加载和首字等待时间，验证不同电脑上的运行表现。\n当前任务：修复显存分配，检查读屏、文字识别、流式气泡显示。\n";
             string[] rows = [
                 "模型运行：保留用户已有模型和设置，检查健康状态与进程退出。",
                 "读屏流程：捕获真正的前台窗口，识别界面文字并按位置整理。",
@@ -132,7 +132,7 @@ internal static class LatencyVerification
                 if (first == null) throw new Exception("No actual bubble text: " + brain.Status);
                 var diagnostic = JsonDocument.Parse(File.ReadAllText(Path.Combine(AppContext.BaseDirectory, "ocr-status.json"))).RootElement.Clone();
                 if (diagnostic.GetProperty("windowHandle").GetInt64() != handle.ToInt64()
-                    || !diagnostic.GetProperty("request").GetString()!.Contains("蓝色大肥鱼"))
+                    || !diagnostic.GetProperty("request").GetString()!.Contains("北交大肥鱼"))
                     throw new Exception("Production OCR did not read the intended visible content");
                 var image = CompanionScreenCapture.Capture(handle, 2560, true)!;
                 File.WriteAllBytes($"scene-{i + 1}.png", Convert.FromBase64String(image.DataUrl[(image.DataUrl.IndexOf(',') + 1)..]));

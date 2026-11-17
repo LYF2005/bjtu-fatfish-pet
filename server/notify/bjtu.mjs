@@ -1,4 +1,4 @@
-/* 大肥鱼·学业提醒 — 北交大数据采集器
+/* 北交大肥鱼·学业提醒 — 北交大数据采集器
  *
  * 链路：
  *   1. MIS 统一认证（SM2 国密加密密码）→ 拿到 SSO 会话
@@ -342,7 +342,7 @@ export function installSessionGuard(sess, ctx, cfg, log = () => {}) {
  *  供 collect / verifyCredentials / 课件下载 / CLI 共用，避免各处重复登录。 */
 export async function openStudySession(cfg = loadConfig(), log = () => {}) {
   if (!cfg.username || !cfg.password) {
-    throw new Error(cfg.accountError || '还没填学业账号：右键桌宠 → 邮课叮 → 账号设置，填自己的学号和密码');
+    throw new Error(cfg.accountError || '还没填学业账号：右键桌宠 → 北交大肥鱼 → 账号设置，填自己的学号和密码');
   }
   const sess = createSession();
   /* MIS 登录偶发瞬时失败（与轮询器并发时 SSO 状态竞争），重试一次。 */
@@ -858,7 +858,7 @@ function parseRoomView(html) {
 /** 拉取某一教学周的空教室占用表。zc 省略时按校准后的 week1Monday 推算。 */
 export async function collectEmptyRooms({ zc, jxlh = '', jash = '' } = {}) {
   const cfg = loadConfig();
-  if (!cfg.username || !cfg.password) throw new Error('还没填学业账号：右键桌宠 → 邮课叮 → 账号设置');
+  if (!cfg.username || !cfg.password) throw new Error('还没填学业账号：右键桌宠 → 北交大肥鱼 → 账号设置');
   const started = Date.now();
   const sess = createSession();
 

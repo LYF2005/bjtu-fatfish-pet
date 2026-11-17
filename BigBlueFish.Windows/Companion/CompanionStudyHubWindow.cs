@@ -15,7 +15,7 @@ using System.Windows.Threading;
 namespace BigBlueFish.Windows;
 
 /// <summary>
-/// 邮课叮 · 学习中心（2026-11-14 视觉重构）。
+/// 北交大肥鱼 · 学习中心（2026-11-14 视觉重构）。
 ///
 /// 设计：浅色纸面 + 大留白 + 极淡分隔线；层级靠字号与间距，状态靠胶囊与细色条，
 /// 不使用系统默认 TabControl / 密集表格 / 整行染色。配色统一取自 CompanionTheme，
@@ -104,7 +104,7 @@ internal static class CompanionStudyHubWindow
 
         var window = new Window
         {
-            Title = "邮课叮 · 学习中心",
+            Title = "北交大肥鱼 · 学习中心",
             Width = 1180,
             Height = 848,
             MinWidth = 1000,

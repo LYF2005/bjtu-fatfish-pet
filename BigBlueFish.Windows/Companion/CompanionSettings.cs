@@ -15,7 +15,7 @@ public partial class MainWindow
     private Action? refreshCompanionSettings;
     private Action? disposeCompanionSettingsContent;
 
-    /// <summary>打开设置窗口；pageTitle 指定初始页（例如从「邮课叮 → 账号设置」直接跳到学业账号页）。</summary>
+    /// <summary>打开设置窗口；pageTitle 指定初始页（例如从「北交大肥鱼 → 账号设置」直接跳到学业账号页）。</summary>
     private void OpenCompanionSettings(string? pageTitle = null)
     {
         if (exitAnimation || companionClosed || exitReady) return;
@@ -69,7 +69,7 @@ public partial class MainWindow
         var sidebar = new StackPanel { Margin = new Thickness(18, 24, 18, 18) };
         var sidebarFrame = new Border { Background = Brushes.White, BorderBrush = new SolidColorBrush(Color.FromRgb(226, 233, 243)), BorderThickness = new Thickness(0, 0, 1, 0), Child = sidebar };
         shell.Children.Add(sidebarFrame);
-        sidebar.Children.Add(new TextBlock { Text = "蓝色大肥鱼", FontSize = 22, FontWeight = FontWeights.Bold, Foreground = new SolidColorBrush(Color.FromRgb(53, 76, 129)), Margin = new Thickness(5, 0, 0, 8) });
+        sidebar.Children.Add(new TextBlock { Text = "北交大肥鱼", FontSize = 22, FontWeight = FontWeights.Bold, Foreground = new SolidColorBrush(Color.FromRgb(53, 76, 129)), Margin = new Thickness(5, 0, 0, 8) });
         var version = typeof(MainWindow).Assembly.GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
             .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().First().InformationalVersion.Split('+')[0];
 #if COMPANION_SAFE

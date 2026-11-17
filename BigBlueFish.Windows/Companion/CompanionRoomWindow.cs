@@ -13,7 +13,7 @@ using System.Windows.Threading;
 namespace BigBlueFish.Windows;
 
 /// <summary>
-/// 邮课叮 · 空教室自习。
+/// 北交大肥鱼 · 空教室自习。
 /// 数据来自教务系统「教室使用查询」：一周 7 天 × 每天 N 节的占用网格（节数从接口读，不写死）。
 /// 界面按「星期 / 起始节次 / 连续节数 / 教学楼 / 教室名」筛选，列出能连续自习的教室。
 /// </summary>
@@ -124,7 +124,7 @@ internal static class CompanionRoomWindow
 
         var window = new Window
         {
-            Title = "邮课叮 · 空教室自习",
+            Title = "北交大肥鱼 · 空教室自习",
             Width = 1120,
             Height = 780,
             MinWidth = 900,
@@ -150,7 +150,7 @@ internal static class CompanionRoomWindow
 
         var title = new TextBlock
         {
-            Text = "邮课叮 · 空教室自习",
+            Text = "北交大肥鱼 · 空教室自习",
             FontSize = 23,
             FontWeight = FontWeights.Bold,
             Foreground = CompanionFateWindow.Ink,

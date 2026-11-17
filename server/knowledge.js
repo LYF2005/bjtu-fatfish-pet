@@ -1,4 +1,4 @@
-/* 大肥鱼·赛博工友 — 知识笔记本核心（服务端模块）
+/* 北交大肥鱼·赛博工友 — 知识笔记本核心（服务端模块）
  * 实现《知识笔记本与漫画日记方案》v1.2 定稿：
  *  - knowledge 表（含 UNIQUE(source, link) 幂等锚点）
  *  - FTS5 external content 表 + 3 触发器（DELETE/UPDATE 侧补 tokenize —— 二轮评审 Bug A 修法）

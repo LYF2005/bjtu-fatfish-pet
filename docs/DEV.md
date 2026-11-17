@@ -13,7 +13,7 @@ MCP 的连接配置、工具字段、动作与文字调度、事件消费及错�
 ./run.ps1 -InputMode Ocr -RuntimeDirectory "推理运行时目录" -ModelsDirectory "GGUF 模型目录"
 ```
 
-默认可复用本机 `C:\Program Files\蓝色大肥鱼` 的运行依赖，也支持 `BLUE_WHALE_RUNTIME`、`BLUE_WHALE_MODELS`、`BLUE_WHALE_DOTNET` 环境变量。运行脚本通过目录连接复用模型，不把模型提交进仓库。SDK 可用 `-SdkPath` 指定。
+默认可复用本机 `C:\Program Files\北交大肥鱼` 的运行依赖，也支持 `BLUE_WHALE_RUNTIME`、`BLUE_WHALE_MODELS`、`BLUE_WHALE_DOTNET` 环境变量。运行脚本通过目录连接复用模型，不把模型提交进仓库。SDK 可用 `-SdkPath` 指定。
 
 准备内置 4B 本地模型时，可以运行以下任一种命令。`DestinationDirectory` 是模型准备目录，脚本会在其下创建 `models` 并保存 `model-selection.json`；两个来源的模型有所不同，均适合本应用。
 
@@ -66,7 +66,7 @@ python ./tools/import-regions.py "ok_data_level3.csv" "ok_geo.csv"
 先退出桌宠，再运行：
 
 ```powershell
-./test.ps1 -InstalledDirectory "C:\Program Files\蓝色大肥鱼" -InputMode Ocr
+./test.ps1 -InstalledDirectory "C:\Program Files\北交大肥鱼" -InputMode Ocr
 ./tools/Build-Installer.ps1 -InputMode Ocr -RuntimeDirectory "已核对的运行时目录"
 ```
 

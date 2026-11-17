@@ -102,7 +102,7 @@ public static class CompanionEdgeLayout
                 bubble.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
                 popup = new Window
                 {
-                    Title = "蓝色大肥鱼 · 对话",
+                    Title = "北交大肥鱼 · 对话",
                     WindowStyle = WindowStyle.None,
                     AllowsTransparency = true,
                     Background = System.Windows.Media.Brushes.Transparent,

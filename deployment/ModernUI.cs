@@ -28,7 +28,7 @@ internal class ModernWindow : Window
         FontFamily = new FontFamily("Microsoft YaHei UI"); FontSize = 14;
         using var stream = typeof(ModernWindow).Assembly.GetManifestResourceStream("BigBlueFish.ModernTheme.xaml")!;
         Resources.MergedDictionaries.Add((ResourceDictionary)XamlReader.Load(stream));
-        Body.Children.Add(new TextBlock { Text = "蓝色大肥鱼", Foreground = ModernUI.Blue, FontSize = 14, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 12) });
+        Body.Children.Add(new TextBlock { Text = "北交大肥鱼", Foreground = ModernUI.Blue, FontSize = 14, FontWeight = FontWeights.SemiBold, Margin = new Thickness(0, 0, 0, 12) });
         Body.Children.Add(new TextBlock { Text = heading, FontSize = 26, FontWeight = FontWeights.Bold, Margin = new Thickness(0, 0, 0, 12) });
         Body.Children.Add(ModernUI.Text(description));
         var shell = new DockPanel { Background = Background }; DockPanel.SetDock(Actions, Dock.Bottom); shell.Children.Add(Actions);

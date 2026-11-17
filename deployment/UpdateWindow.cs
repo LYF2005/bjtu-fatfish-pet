@@ -22,7 +22,7 @@ internal sealed class UpdateWindow : ModernWindow
     private bool closeRequested, closed;
     internal bool InstallerStarted { get; private set; }
 
-    internal UpdateWindow(AvailableUpdate update, string directory) : base("更新蓝色大肥鱼", "鱼鱼有新版本啦", "可更新到 " + update.Version, 630, 480)
+    internal UpdateWindow(AvailableUpdate update, string directory) : base("更新北交大肥鱼", "鱼鱼有新版本啦", "可更新到 " + update.Version, 630, 480)
     {
         this.update = update; this.directory = Path.GetFullPath(directory);
         Body.Children.Add(ModernUI.Text(update.Notes)); Body.Children.Add(progress); Body.Children.Add(status);

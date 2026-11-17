@@ -43,7 +43,7 @@ public partial class MainWindow
             if (availableUpdate != null)
             {
                 if (interactive) OpenUpdateWindow();
-                else notifyIcon.ShowBalloonTip(8000, "蓝色大肥鱼有新版本啦", "点击下载并更新到 " + availableUpdate.Version, System.Windows.Forms.ToolTipIcon.Info);
+                else notifyIcon.ShowBalloonTip(8000, "北交大肥鱼有新版本啦", "点击下载并更新到 " + availableUpdate.Version, System.Windows.Forms.ToolTipIcon.Info);
             }
             else if (interactive) ModernUI.Choice(companionSettings, "检查更新", updateStatus, "确定");
         }

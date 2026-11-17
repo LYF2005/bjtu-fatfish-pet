@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-  邮课叮桌宠 · 三端免安装绿色包一键打包脚本。
+  北交大肥鱼桌宠 · 三端免安装绿色包一键打包脚本。
 
 .DESCRIPTION
   为指定平台组装绿色包（桌宠本体 + 内嵌 Node 运行时 + 纯 JS 后端 + 一键启动器），
@@ -209,7 +209,7 @@ function Write-UnixLauncher {
   param([hashtable]$Spec, [string]$Root, [string]$FileName, [string]$AppExe)
   $lines = @(
     '#!/usr/bin/env bash',
-    '# 邮课叮桌宠 · 一键启动器（免安装绿色包）',
+    '# 北交大肥鱼桌宠 · 一键启动器（免安装绿色包）',
     '# 职责：拉起后端 → 等待端口就绪 → 拉起桌宠本体。后端已运行则复用。',
     'set -u',
     'ROOT="$(cd "$(dirname "$0")" && pwd)"',
@@ -254,8 +254,8 @@ function Write-UnixLauncher {
 function Write-Readme {
   param([hashtable]$Spec, [string]$Root)
   $entry = switch ($Spec.Rid) {
-    'win-x64'   { '启动邮课叮.exe' }
-    default     { '启动邮课叮.sh / 启动邮课叮.command' }
+    'win-x64'   { '启动北交大肥鱼.exe' }
+    default     { '启动北交大肥鱼.sh / 启动北交大肥鱼.command' }
   }
   $note = ''
   if ($Spec.Rid -like 'osx-*') {
@@ -270,11 +270,11 @@ function Write-Readme {
     $note = @'
 
 【Linux 首次打开】
-若双击无法执行，请在终端运行：chmod +x 启动邮课叮.sh && ./启动邮课叮.sh
+若双击无法执行，请在终端运行：chmod +x 启动北交大肥鱼.sh && ./启动北交大肥鱼.sh
 '@
   }
   $text = @"
-邮课叮桌宠（$($Spec.Label) 免安装绿色包）
+北交大肥鱼桌宠（$($Spec.Label) 免安装绿色包）
 ========================================
 
 一、启动
@@ -282,7 +282,7 @@ function Write-Readme {
   无需安装 .NET、无需安装 Node.js、无需管理员权限。
 
 二、首次使用
-  1. 右键桌宠 / 托盘图标 →「邮课叮」→「账号设置…」，填入北交大学号与密码；
+  1. 右键桌宠 / 托盘图标 →「北交大肥鱼」→「账号设置…」，填入北交大学号与密码；
   2. 打开「学习中心」查看作业 DDL、课程课件、课表与空教室。
 
 三、数据与隐私
@@ -304,14 +304,14 @@ $note
 function New-Archive {
   param([hashtable]$Spec, [string]$StageRoot, [string]$StageName)
   if ($Spec.Archive -eq 'zip') {
-    $dest = Join-Path $OutDir "邮课叮桌宠-$($Spec.Label).zip"
+    $dest = Join-Path $OutDir "北交大肥鱼桌宠-$($Spec.Label).zip"
     Remove-Tree $dest
-    # 传入目录本身（不带 /*），使 zip 与 tar.gz 一样带顶层「邮课叮桌宠/」目录，
+    # 传入目录本身（不带 /*），使 zip 与 tar.gz 一样带顶层「北交大肥鱼桌宠/」目录，
     # 避免用户解压后散落一地。
     Compress-Archive -Path (Join-Path $StageRoot $StageName) -DestinationPath $dest -CompressionLevel Optimal
     return $dest
   } else {
-    $dest = Join-Path $OutDir "邮课叮桌宠-$($Spec.Label).tar.gz"
+    $dest = Join-Path $OutDir "北交大肥鱼桌宠-$($Spec.Label).tar.gz"
     Remove-Tree $dest
     # 用 bsdtar 打包，保持 unix 路径分隔与执行位（Linux/macOS 依 -C 切换根）
     & tar.exe -czf $dest -C $StageRoot $StageName
@@ -324,7 +324,7 @@ function New-Archive {
 function Build-Platform {
   param([string]$Rid, [string]$Dotnet)
   $spec = Get-PlatformSpec -Rid $Rid
-  $stageName = '邮课叮桌宠'
+  $stageName = '北交大肥鱼桌宠'
   $stageRoot = Join-Path $BuildDir $Rid
   Remove-Tree $stageRoot
   $stage = Join-Path $stageRoot $stageName
@@ -348,13 +348,13 @@ function Build-Platform {
     & $Dotnet publish (Join-Path $PackagingDir 'launcher-src/YoukedingLauncher.csproj') `
       -c $Configuration --nologo -o $launcherOut
     if ($LASTEXITCODE -ne 0) { throw 'Windows 启动器编译失败' }
-    $launcherExe = Join-Path $launcherOut '启动邮课叮.exe'
-    if (-not (Test-Path $launcherExe)) { throw '未生成 启动邮课叮.exe' }
+    $launcherExe = Join-Path $launcherOut '启动北交大肥鱼.exe'
+    if (-not (Test-Path $launcherExe)) { throw '未生成 启动北交大肥鱼.exe' }
     Copy-Item $launcherExe -Destination $stage -Force
   } else {
     $appExe = if ($Rid -like 'osx-*') { 'BigBlueFish.Linux' } else { 'BigBlueFish.Linux' }
-    Write-UnixLauncher -Spec $spec -Root $stage -FileName '启动邮课叮.sh' -AppExe $appExe
-    Copy-Item (Join-Path $stage '启动邮课叮.sh') -Destination (Join-Path $stage '启动邮课叮.command') -Force
+    Write-UnixLauncher -Spec $spec -Root $stage -FileName '启动北交大肥鱼.sh' -AppExe $appExe
+    Copy-Item (Join-Path $stage '启动北交大肥鱼.sh') -Destination (Join-Path $stage '启动北交大肥鱼.command') -Force
     # 可执行位说明：Windows 上交叉打包无法可靠保留 Unix 执行位，且避免调用 bash
     # （Windows 的 bash.exe 会指向 WSL 启动器）。改为在启动脚本首行自带 chmod，
     # 运行时会自动修复桌宠本体的执行权限。

@@ -13,11 +13,11 @@ namespace BigBlueFish.Windows;
 
 public partial class MainWindow
 {
-    /* ---------- 邮课叮菜单 ---------- */
+    /* ---------- 北交大肥鱼菜单 ---------- */
 
     private MenuItem BuildStudySubmenu()
     {
-        var root = new MenuItem { Header = "邮课叮" };
+        var root = new MenuItem { Header = "北交大肥鱼" };
         /* 作业 DDL / 课程课件 / 课表已收敛为「学习中心」里的三个子页，
          * 菜单只留一个入口，不再有三份指向同一窗口的重复项。 */
         var hub = new MenuItem { Header = "学习中心…" };
@@ -35,7 +35,7 @@ public partial class MainWindow
         {
             preferences.StudyNotifyEnabled = enabled.IsChecked;
             preferences.Save();
-            ShowCompanionNotice(enabled.IsChecked ? "邮课叮自动提醒已开启～" : "邮课叮自动提醒已暂停。", pink: !enabled.IsChecked);
+            ShowCompanionNotice(enabled.IsChecked ? "北交大肥鱼自动提醒已开启～" : "北交大肥鱼自动提醒已暂停。", pink: !enabled.IsChecked);
         };
         root.Items.Add(hub);
         root.Items.Add(mail);
@@ -49,7 +49,7 @@ public partial class MainWindow
 
     private Forms.ToolStripMenuItem BuildStudyTrayMenu()
     {
-        var root = new Forms.ToolStripMenuItem("邮课叮");
+        var root = new Forms.ToolStripMenuItem("北交大肥鱼");
         /* 与右键菜单保持一致：只留「学习中心…」，三个子页都在窗口里切换。 */
         root.DropDownItems.Add("学习中心…", null, async (_, _) => await Dispatcher.InvokeAsync(() => OpenStudyHubAsync(0)).Task.Unwrap());
         root.DropDownItems.Add("邮件", null, async (_, _) => await Dispatcher.InvokeAsync(ShowStudyMailAsync).Task.Unwrap());
@@ -62,7 +62,7 @@ public partial class MainWindow
         {
             preferences.StudyNotifyEnabled = auto.Checked;
             preferences.Save();
-            ShowCompanionNotice(auto.Checked ? "邮课叮自动提醒已开启～" : "邮课叮自动提醒已暂停。", pink: !auto.Checked);
+            ShowCompanionNotice(auto.Checked ? "北交大肥鱼自动提醒已开启～" : "北交大肥鱼自动提醒已暂停。", pink: !auto.Checked);
         });
         root.DropDownItems.Add(auto);
         return root;
@@ -71,7 +71,7 @@ public partial class MainWindow
     private async Task RunStudyActionAsync(Func<Task> action)
     {
         try { await action(); }
-        catch (Exception ex) { ShowCompanionNotice("邮课叮暂时打不开：" + ex.Message); }
+        catch (Exception ex) { ShowCompanionNotice("北交大肥鱼暂时打不开：" + ex.Message); }
     }
 
     /* ---------- 自动提醒 ---------- */
@@ -188,17 +188,17 @@ public partial class MainWindow
         var summary = await studyClient.GetSummaryAsync(studyCts?.Token ?? CancellationToken.None);
         if (!summary.Reachable)
         {
-            ShowCompanionNotice("邮课叮还没连上学业服务：" + (summary.TransportError.Length > 0 ? summary.TransportError : summary.Error));
+            ShowCompanionNotice("北交大肥鱼还没连上学业服务：" + (summary.TransportError.Length > 0 ? summary.TransportError : summary.Error));
             return null;
         }
         if (!summary.Configured)
         {
-            ShowCompanionNotice("主人，还没填学业账号呢。右键我 → 邮课叮 → 账号设置，填一次就能看自己的作业、邮件和课表了。", animate: true);
+            ShowCompanionNotice("主人，还没填学业账号呢。右键我 → 北交大肥鱼 → 账号设置，填一次就能看自己的作业、邮件和课表了。", animate: true);
             return null;
         }
         if (!summary.Usable)
         {
-            ShowCompanionNotice("邮课叮这次没拉到数据：" + (string.IsNullOrWhiteSpace(summary.Error) ? "账号可能还没配置好" : summary.Error));
+            ShowCompanionNotice("北交大肥鱼这次没拉到数据：" + (string.IsNullOrWhiteSpace(summary.Error) ? "账号可能还没配置好" : summary.Error));
             return null;
         }
         return summary;
@@ -206,10 +206,10 @@ public partial class MainWindow
 
     private async Task RefreshStudyAsync()
     {
-        ShowCompanionNotice("主人，邮课叮正在查看作业、邮件和课表～");
+        ShowCompanionNotice("主人，北交大肥鱼正在查看作业、邮件和课表～");
         var summary = await LoadStudySummaryAsync(true);
         if (summary != null)
-            ShowCompanionNotice($"邮课叮更新好了：{summary.Pending.Count} 个待交作业，{summary.Emails.Unread} 封未读邮件。", animate: true);
+            ShowCompanionNotice($"北交大肥鱼更新好了：{summary.Pending.Count} 个待交作业，{summary.Emails.Unread} 封未读邮件。", animate: true);
     }
 
     /* ---------- 学习中心（作业 DDL / 课程课件 / 课表） ---------- */
@@ -220,7 +220,7 @@ public partial class MainWindow
         if (studyClient == null) InitializeStudyNotifications();
         if (studyClient == null)
         {
-            ShowCompanionNotice("邮课叮还没连上桥接服务，稍后再试～");
+            ShowCompanionNotice("北交大肥鱼还没连上桥接服务，稍后再试～");
             return;
         }
         await Task.CompletedTask;

@@ -22,7 +22,7 @@ internal sealed partial class LinuxPetWindow
     {
         if (!on) { File.Delete(AutostartFile); return; }
         Directory.CreateDirectory(Path.GetDirectoryName(AutostartFile)!);
-        File.WriteAllText(AutostartFile, "[Desktop Entry]\nType=Application\nName=蓝色大肥鱼\nExec=\"" + Path.Combine(AppContext.BaseDirectory, "BigBlueFish.Linux").Replace("\\", "\\\\").Replace("\"", "\\\"") + "\"\nTerminal=false\n");
+        File.WriteAllText(AutostartFile, "[Desktop Entry]\nType=Application\nName=北交大肥鱼\nExec=\"" + Path.Combine(AppContext.BaseDirectory, "BigBlueFish.Linux").Replace("\\", "\\\\").Replace("\"", "\\\"") + "\"\nTerminal=false\n");
     }
     void ApplySettings(PixelPoint? requestedPosition = null)
     {
@@ -66,7 +66,7 @@ internal sealed partial class LinuxPetWindow
         var root = new Grid { ColumnDefinitions = new ColumnDefinitions("180,*") };
         var navigation = new StackPanel { Spacing = 10, Margin = new Thickness(0, 0, 20, 0) };
         var body = new StackPanel { Spacing = 8 }; var scroll = new ScrollViewer { Content = body }; Grid.SetColumn(scroll, 1); root.Children.Add(navigation); root.Children.Add(scroll);
-        settings = Dialog("蓝色大肥鱼 · 设置", root, 880, 700); settings.MinWidth = 780; settings.MinHeight = 600;
+        settings = Dialog("北交大肥鱼 · 设置", root, 880, 700); settings.MinWidth = 780; settings.MinHeight = 600;
         settings.Closed += (_, _) => { settings = null; refreshLinuxSettings = null; Save(); nextEvent = DateTime.UtcNow.AddSeconds(Preferences.AnimationIntervalSeconds); };
         Action selectedPage = General;
         void Navigate(Action page) { selectedPage = page; page(); }
@@ -118,7 +118,7 @@ internal sealed partial class LinuxPetWindow
             }
         }
         void About() {
-            Title("关于与更新"); body.Children.Add(Paragraph("蓝色大肥鱼 " + typeof(LinuxPetWindow).Assembly.GetName().Version!.ToString(3) + (McpAvailable ? "" : " · 无MCP版")));
+            Title("关于与更新"); body.Children.Add(Paragraph("北交大肥鱼 " + typeof(LinuxPetWindow).Assembly.GetName().Version!.ToString(3) + (McpAvailable ? "" : " · 无MCP版")));
             Toggle("每次启动自动检查更新", Preferences.CheckUpdatesOnStartup, value => Preferences.CheckUpdatesOnStartup = value);
             body.Children.Add(ActionButton("检查更新", async () => await CheckUpdates(true)));
         }

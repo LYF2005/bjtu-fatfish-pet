@@ -63,7 +63,7 @@ public partial class MainWindow
     private System.Threading.Mutex? singleInstance;
     private FileStream? instanceLock;
 
-    // 邮课叮：桌宠自身的学业提醒轮询与菜单展示，不依赖壁纸前端。
+    // 北交大肥鱼：桌宠自身的学业提醒轮询与菜单展示，不依赖壁纸前端。
     private CompanionStudyClient? studyClient;
     private DispatcherTimer? studyTimer;
     private CancellationTokenSource? studyCts;
@@ -105,7 +105,7 @@ public partial class MainWindow
         ShowActivated = false;
         ShowInTaskbar = false;
         Topmost = true;
-        Title = "蓝色大肥鱼";
+        Title = "北交大肥鱼";
         ResizeMode = ResizeMode.NoResize;
         SizeToContent = SizeToContent.Manual;
         companionLayout = new Grid
@@ -970,7 +970,7 @@ public partial class MainWindow
         var menu = new CompanionTrayMenu();
         menu.Opening += (_, _) => {
             lastExternalForeground = CompanionNative.ResolveSpeechForeground(CompanionNative.GetForegroundWindow(), lastExternalForeground);
-            // 天气 / 邮课叮 / 今日打工 / 今日热榜 / 出鲸仙（索引 3/4/5/6/7）。
+            // 天气 / 北交大肥鱼 / 今日打工 / 今日热榜 / 出鲸仙（索引 3/4/5/6/7）。
             foreach (int index in new[] { 3, 4, 5, 6, 7 }) if (menu.Items.Count > index) menu.Items[index].Enabled = !PuppetActive;
             // 好感度进度条实时刷新当前分数与档位。
             if (menu.Items.Count > 1 && menu.Items[1] is Forms.ToolStripControlHost host && host.Control is AffinityProgressControl affinity)
@@ -1006,7 +1006,7 @@ public partial class MainWindow
         notifyIcon = new CompanionTrayIcon
         {
             Icon = new System.Drawing.Icon(sourceIcon, new System.Drawing.Size(32, 32)),
-            Text = "蓝色大肥鱼",
+            Text = "北交大肥鱼",
             ContextMenuStrip = menu
         };
         notifyIcon.DoubleClick += (_, _) => Dispatcher.Invoke(RestoreCompanion);

@@ -12,7 +12,7 @@ using System.Windows.Threading;
 
 namespace BigBlueFish.Windows;
 
-/// <summary>邮课叮 · 课表周视图。只读展示当前学期课表，并高亮今天。</summary>
+/// <summary>北交大肥鱼 · 课表周视图。只读展示当前学期课表，并高亮今天。</summary>
 internal static class CompanionScheduleWindow
 {
     private static Window? instance;
@@ -32,7 +32,7 @@ internal static class CompanionScheduleWindow
 
         var window = new Window
         {
-            Title = "邮课叮 · 课表",
+            Title = "北交大肥鱼 · 课表",
             Width = 1200,
             Height = 720,
             MinWidth = 1100,
@@ -56,7 +56,7 @@ internal static class CompanionScheduleWindow
 
         var title = new TextBlock
         {
-            Text = "邮课叮 · 我的课表",
+            Text = "北交大肥鱼 · 我的课表",
             FontSize = 23,
             FontWeight = FontWeights.Bold,
             Foreground = CompanionFateWindow.Ink,

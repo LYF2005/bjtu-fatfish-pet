@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* 邮课叮 · 作业 DDL 同步（无界面 CLI）
+/* 北交大肥鱼 · 作业 DDL 同步（无界面 CLI）
  *
  * 与参考工具 `_internal/crawler/cc_homework.py` 完全相同的契约，方便被任何前端复用：
  *   node cc-homework.mjs                        → JSON 打印到 stdout

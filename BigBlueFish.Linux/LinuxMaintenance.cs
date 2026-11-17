@@ -23,7 +23,7 @@ internal sealed partial class LinuxPetWindow
         var panel = new StackPanel { Spacing = 10 };
         panel.Children.Add(new TextBlock { Text = "安装本地模型", FontSize = 24 });
         panel.Children.Add(Paragraph("选择下载来源，或导入已下载的 GGUF 模型。两个源的模型有所不同，但是均适合本应用。"));
-        var dialog = Dialog("蓝色大肥鱼 · 安装模型", panel, 680, 550);
+        var dialog = Dialog("北交大肥鱼 · 安装模型", panel, 680, 550);
         var status = Paragraph("模型目录：" + Path.Combine(Environment.CurrentDirectory, "models")); panel.Children.Add(status);
         var progress = new ProgressBar { Minimum = 0, Maximum = 100, Height = 8 }; panel.Children.Add(progress);
         var choices = new WrapPanel(); panel.Children.Add(choices); var retry = new WrapPanel { IsVisible = false }; panel.Children.Add(retry);
@@ -124,7 +124,7 @@ internal sealed partial class LinuxPetWindow
             var assets = root.GetProperty("assets").EnumerateArray().ToArray();
             string? Url(string name) => assets.FirstOrDefault(a => a.GetProperty("name").GetString() == name).TryGetProperty("browser_download_url", out var value) ? value.GetString() : null;
             string? url = Url(asset), checksum = Url(asset + ".sha256"); if (url == null || checksum == null) throw new IOException("该版本的 Linux 安装包尚未就绪。");
-            if (!await Confirm("发现新版本", "发现蓝色大肥鱼 " + latest.ToString(3) + "，是否下载并安装更新？", "下载更新")) return;
+            if (!await Confirm("发现新版本", "发现北交大肥鱼 " + latest.ToString(3) + "，是否下载并安装更新？", "下载更新")) return;
             string hash = (await client.GetStringAsync(checksum)).Split((char[]?)null, StringSplitOptions.RemoveEmptyEntries)[0].ToLowerInvariant();
             if (!Regex.IsMatch(hash, "^[a-f0-9]{64}$")) throw new IOException("更新校验信息无效。");
             string package = Path.Combine(Environment.CurrentDirectory, "cache/updates", asset);

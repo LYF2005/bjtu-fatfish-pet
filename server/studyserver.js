@@ -1,4 +1,4 @@
-/* 邮课叮 · 桌宠独立后端服务
+/* 北交大肥鱼 · 桌宠独立后端服务
  * 职责（仅供桌宠使用，与壁纸项目完全独立）：
  *  1. HTTP(默认 23336，可配置)：
  *     - /study/*    学业接口：账号、作业 DDL、课件、课表、空教室、提醒队列
@@ -143,7 +143,7 @@ function broadcast(_obj) { /* 桌宠无为 WebSocket 前端，事件已落库即
 /* ---------- 学业提醒轮询（作业 / 邮件） ---------- */
 const poller = createPoller({
   onNotify(payload) {
-    /* 作业 / 邮件提醒现在只给桌宠「邮课叮」：写进 state.alerts 由 /study/alerts 增量拉取。
+    /* 作业 / 邮件提醒现在只给桌宠「北交大肥鱼」：写进 state.alerts 由 /study/alerts 增量拉取。
      * 壁纸不再接收学业提醒：既不再往 WS 广播，也不再塞进 events 表
      * （events 表是壁纸 /event/latest 的兜底通道，写进去壁纸仍会收到）。
      * 保留一条日志方便排查自动提醒是否在跑。 */
@@ -313,7 +313,7 @@ function studySettingsHtml() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>大肥鱼 · 学业账号</title>
+<title>北交大肥鱼 · 学业账号</title>
 <style>
   /* 与桌宠 CompanionTheme 同一套色值：浅色纸面 / 大留白 / 极淡分隔线 / 状态克制 */
   :root {
@@ -398,7 +398,7 @@ function studySettingsHtml() {
     <div class="row"><button id="refresh" class="ghost">立即刷新学业数据</button></div>
   </div>
 
-  <div class="foot">邮课叮 · 数据来自本机桥接服务</div>
+  <div class="foot">北交大肥鱼 · 数据来自本机桥接服务</div>
 </div>
 <script>
 const $ = (id) => document.getElementById(id);
@@ -458,7 +458,7 @@ $('test').onclick = async () => {
   setStatus(r.ok ? ('登录成功：' + (r.termName || '') + ' 共 ' + r.courseCount + ' 门课。') : ('登录失败：' + (r.error || '')), r.ok ? 'ok' : 'err');
 };
 $('clear').onclick = async () => {
-  if (!confirm('清除后这台电脑就不再记得你的学号密码，邮课叮会停止工作。确定清除？')) return;
+  if (!confirm('清除后这台电脑就不再记得你的学号密码，北交大肥鱼会停止工作。确定清除？')) return;
   setBusy(true);
   const r = await api('/study/account', { method: 'DELETE' });
   setBusy(false);
@@ -499,7 +499,7 @@ function kbPageHtml() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>大肥鱼·知识笔记本</title>
+<title>北交大肥鱼·知识笔记本</title>
 <style>
   :root { --c1:#00f0ff; --c2:#ff2bd6; --bg:#0a0e1c; --card:#121a30; --text:#dfe6f5; --dim:#8894b8; }
   * { box-sizing:border-box; }
@@ -741,7 +741,7 @@ const server = http.createServer(async (req, res) => {
       return sendJSON(res, 200, { ok: r.ok, error: r.error, notified: !!r.notified, ...poller.status() });
     }
 
-    /* ---------- 邮课叮：给桌宠用的学业接口 ---------- */
+    /* ---------- 北交大肥鱼：给桌宠用的学业接口 ---------- */
 
     /* ---------- 学业账号（设置界面读写） ----------
      * GET    /study/account          当前账号（不返回密码）
@@ -886,7 +886,7 @@ const server = http.createServer(async (req, res) => {
       }
     }
 
-    /* ---------- 作业 DDL / 课件资料（邮课叮扩展，2026-11-14） ---------- */
+    /* ---------- 作业 DDL / 课件资料（北交大肥鱼扩展，2026-11-14） ---------- */
 
     /* 把轮询快照里的作业映射成与 cc-homework.mjs 一致的展示结构。
      * 旧快照可能还没有 remainingText 等新字段，这里用 remainingInfo() 现算兜底，
@@ -1094,7 +1094,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     /* 汇总：作业（待交/全部）+ 邮件 + 课表 + 学期周次。
-     * 桌宠的「邮课叮 → 作业 / 邮件 / 课表」三个子项都从这里取数。 */
+     * 桌宠的「北交大肥鱼 → 作业 / 邮件 / 课表」三个子项都从这里取数。 */
     if (url === '/study/summary' && method === 'GET') {
       const st = poller.status();
       const snap = st.snapshot || {};
@@ -1281,8 +1281,8 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(HTTP_PORT, () => {
-  console.log('[邮课叮] 桌宠后端已启动 http://127.0.0.1:' + HTTP_PORT);
-  console.log('[邮课叮] 学业接口 /study/* · 大脑接口 /stats/mood /kb/* /event/latest');
+  console.log('[北交大肥鱼] 桌宠后端已启动 http://127.0.0.1:' + HTTP_PORT);
+  console.log('[北交大肥鱼] 学业接口 /study/* · 大脑接口 /stats/mood /kb/* /event/latest');
 });
 
 /* ---------- 启动学业提醒轮询 ---------- */
